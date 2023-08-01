@@ -8,29 +8,36 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import {ThemeProvider } from "@mui/material/styles";
-import {Link, useNavigate} from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { Link, useNavigate } from "react-router-dom";
 import { db, register } from "../../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import {formBoxStyles, theme} from "./style";
+import { formBoxStyles, theme } from "./style";
+import { Snackbar, SnackbarContent } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 
 const RegisterScreen: FC = () => {
   const [name, setName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>('')
+  const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [phone, setPhone] = useState<string>("+380");
-  const [message, setMessage] = useState<any>();
-  const navigate = useNavigate()
+  const [notification, setNotification] = useState<{ message: string} | null>(null);
+  const navigate = useNavigate();
+  const showNotification = (message: any) => {
+    setNotification({ message });
+    setTimeout(() => setNotification(null), 5000);
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const registerHandler = async (
-        email: string,
-        password: string,
-        name: string,
-        lastName: string,
-        phone: string
+      email: string,
+      password: string,
+      name: string,
+      lastName: string,
+      phone: string
     ) => {
       try {
         const { user } = await register(email, password);
@@ -38,11 +45,11 @@ const RegisterScreen: FC = () => {
           userId: user.uid,
           name,
           lastName,
-          phone,
+          phone
         });
-        navigate('/home')
+        navigate("/home");
       } catch (error: any) {
-        setMessage(error.toString().slice(24))
+        showNotification(error.toString().slice(24))
       }
     };
     registerHandler(email, password, name, lastName, phone).then(r => r);
@@ -78,26 +85,26 @@ const RegisterScreen: FC = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                  autoComplete="fname"
-                  required
-                  fullWidth
-                  label="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                autoComplete="fname"
+                required
+                fullWidth
+                label="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                  autoComplete="fname"
-                  required
-                  fullWidth
-                  label="Number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  inputProps={{
-                    pattern: "\\+380[0-9]{9}",
-                  }}
-                  helperText="Phone number format: +380XXXXXXXXX"
+                autoComplete="fname"
+                required
+                fullWidth
+                label="Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                inputProps={{
+                  pattern: "\\+380[0-9]{9}"
+                }}
+                helperText="Телефон формата: +380XXXXXXXXX"
               />
             </Grid>
             <Grid item xs={12}>
@@ -136,12 +143,36 @@ const RegisterScreen: FC = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link to="/signIn">Already have an account? Sign in</Link>
+              <Link style={{ textDecoration: "none" }} to="/signIn">У вас уже есть аккаунт? Войти</Link>
             </Grid>
           </Grid>
         </Box>
-        {message}
       </Container>
+      <Snackbar
+        open={Boolean(notification)}
+        autoHideDuration={5000}
+        onClose={() => setNotification(null)}
+      >
+        <SnackbarContent
+          sx={{
+            position: "relative",
+            display: "flex",
+            justifyContent: "flex-end",
+            backgroundColor: theme.palette.error.dark,
+          }}
+          message={notification?.message}
+          action={
+            <IconButton
+              size="small"
+              aria-label="close"
+              color="inherit"
+              onClick={() => setNotification(null)}
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          }
+        />
+      </Snackbar>
     </ThemeProvider>
   );
 };
