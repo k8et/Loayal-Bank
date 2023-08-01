@@ -1,0 +1,16 @@
+.main{
+    font-family: Roboto,sans-serif;
+    color: #626060;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    height: 7.9vh;
+    border-bottom: 1px solid #c5c3c3;
+}
+.darkTheme{
+    background-color: #172a41;
+    color: white;
+}
+.lightTheme{
+    background-color: white;
+}

@@ -1,0 +1,36 @@
+.container {
+    overflow: auto;
+    height: 93vh;
+    padding: 0px 20px 0px 20px;
+    background-color: #f5f5f5;
+}
+.lightTheme{
+    color: black;
+    background-color: white;
+}
+.darkTheme{
+    color: #f5f5f5;
+    background-color: #0f0f0f;
+}
+.title {
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 480%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+@media (max-width: 1024px) {
+
+}

@@ -1,0 +1,37 @@
+.modalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+    gap: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modalContent h2 {
+    margin-bottom: 20px;
+}
+
+.modalContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modalContent .textField {
+    margin-bottom: 10px;
+}
+
+.modalContent .button {
+    margin-top: 10px;
+}

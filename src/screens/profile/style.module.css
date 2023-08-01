@@ -1,0 +1,227 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 92vh;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.lightTheme {
+    color: black;
+    background-color: white;
+}
+
+.darkTheme {
+    color: #f5f5f5;
+    background-color: #0f0f0f;
+}
+
+.imgProfile {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.profileContainer {
+    margin-top: 30px;
+    background-color: white;
+    font-family: Roboto, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    padding: 20px;
+}
+.loadUser{
+    gap: 20px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profileContainerDarkTheme {
+    color: #f5f5f5;
+    background-color: #0f0f0f;
+}
+
+.profileContainerLightTheme {
+    color: black;
+    background-color: white;
+}
+
+.textField {
+    margin: 10px 0;
+    width: 300px;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.modalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    background-color: #f3f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modalContent h2 {
+    margin-bottom: 20px;
+}
+
+.modalContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modalContent .textField {
+    margin-bottom: 10px;
+}
+
+.modalContent .button {
+    margin-top: 10px;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 70px;
+}
+
+.infBox {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 455px;
+}
+
+.photoProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 200px;
+    height: 350px;
+}
+
+.photoProfile h3 {
+    margin-bottom: 15px;
+}
+
+.aboutU {
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    width: 880px;
+    height: 300px;
+}
+
+.fib {
+    display: flex;
+    flex: 1;
+    border-bottom: 2px solid #b7b7b7;
+    align-items: center;
+}
+
+.fib p {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fib h3 {
+    min-width: 175px;
+}
+.documentContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+}
+.documentContainerBox {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 2vh;
+}
+
+.document {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.document div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+@media (max-width: 1450px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profileContainer {
+        width: 90%;
+        height: 500px;
+        padding: 10px;
+    }
+
+    .textField {
+        width: 90%;
+    }
+
+    .modalContent {
+        width: 90%;
+    }
+
+    .tabs, .infBox {
+        flex-direction: column;
+        width: 100%;
+    }
+    .infBox{
+        height: 400px;
+    }
+    .photoProfile, .aboutU {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .fib h3 {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .documentContainer {
+        height: 100%;
+        width: 90%;
+    }
+
+    .documentContainerBox {
+        margin-bottom: 80px;
+        width: 100%;
+    }
+}

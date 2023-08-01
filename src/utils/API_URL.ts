@@ -1,0 +1,2 @@
+export const API_URL_СURRENCY = "https://v6.exchangerate-api.com/v6/d124b21f0ba10987b5ad7399/latest/USD";
+export const API_URL_NEWS = "https://newsapi.org/v2/top-headlines?category=business&language=en&apiKey=50461044f124421ba203db922539a920"

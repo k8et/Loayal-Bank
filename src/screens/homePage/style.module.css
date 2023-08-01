@@ -1,0 +1,138 @@
+
+.main{
+    font-family:Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 92vh;
+    background-color: #f5f5f5;
+}
+.lightTheme{
+    background-color: #f5f5f5;
+    color: black;
+}
+.darkTheme{
+    background-color: #0f0f0f;
+    color: white;
+}
+.container{
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 900px;
+}
+.box{
+    justify-content: center;
+    width: 410px;
+    height: 150px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.boxLight{
+    background-color: white;
+}
+.boxDark{
+    background-color: #212121;
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+}
+.field{
+   width: 340px;
+}
+.inputBox{
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.boxConverter{
+    justify-content: center;
+    display: flex;
+    width: 410px;
+    height: 150px;
+    background-color: white;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.boxConverterLight{
+    background-color: white;
+}
+.boxConverterDark{
+    background-color: #212121;
+}
+.inputBoxConverter{
+    margin-left: 10px;
+    display: flex;
+    gap: 30px;
+}
+.titleBox{
+    display: flex;
+    align-items: center;
+}
+.titleBox img{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+}
+.titleBox h3{
+    margin-top: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.titleBoxConverter{
+    display: flex;
+    align-items: center;
+}
+.titleBoxConverter img{
+    margin-left: 10px;
+    width: 30px;
+}
+.titleBoxConverter h3{
+    font-weight: 400;
+    margin-left: 10px;
+}
+.sliderNews{
+    margin-top: 10px;
+    width: 840px;
+    height: 350px;
+}
+.news{
+    display: flex;
+}
+.titleAndDescription{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 10px;
+}
+.titleAndDescriptionLight{
+    color: black;
+    background-color: white;
+
+}
+.titleAndDescriptionDark{
+    color: white;
+    background-color: #212121;
+}
+@media (max-width: 1024px) {
+    .box{
+        width: 400px;
+        height: 140px;
+    }
+    .boxConverter{
+        width: 400px;
+        height: 140px;
+    }
+}
